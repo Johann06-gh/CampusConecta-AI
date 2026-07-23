@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agente de inteligencia artificial para consultar servicios estudiantiles.">
+  <title>CampusConecta AI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="CampusConecta AI">
+        <span class="brand-mark">C</span>
+        <span><strong>CampusConecta</strong><small>Agente documental con IA</small></span>
+      </a>
+      <div class="status" id="statusBadge"><span></span> Conectando...</div>
+    </header>
+
+    <main class="layout">
+      <section class="hero-panel">
+        <div class="eyebrow">ORIENTACIÓN ESTUDIANTIL 24/7</div>
+        <h1>Encuentra el servicio que necesitas, sin revisar documentos completos.</h1>
+        <p>Pregunta sobre becas, tutorías, empleabilidad, trámites, biblioteca y otros servicios. El agente recupera la información más relevante del documento y muestra sus fuentes.</p>
+
+        <div class="document-card">
+          <div class="document-icon">CSV</div>
+          <div>
+            <small>Documento activo</small>
+            <strong id="documentName">Cargando...</strong>
+            <span id="documentMeta">Preparando índice</span>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article><strong>01</strong><span>Búsqueda híbrida</span></article>
+          <article><strong>02</strong><span>Fuentes verificables</span></article>
+          <article><strong>03</strong><span>Listo para OCI</span></article>
+        </div>
+      </section>
+
+      <section class="chat-panel">
+        <div class="chat-header">
+          <div>
+            <small>ASISTENTE ACTIVO</small>
+            <h2>¿En qué puedo orientarte?</h2>
+          </div>
+          <button class="ghost-button" id="clearButton" type="button">Limpiar</button>
+        </div>
+
+        <div class="suggestions" id="suggestions">
+          <button type="button">¿Qué becas existen para buen promedio?</button>
+          <button type="button">Necesito ayuda para mejorar mi CV</button>
+          <button type="button">¿Cómo puedo pedir una laptop prestada?</button>
+          <button type="button">¿Dónde consigo artículos para mi investigación?</button>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar">AI</div>
+            <div class="bubble">
+              <p>Hola. Puedo responder usando la guía de servicios estudiantiles y mostrarte exactamente qué registros utilicé.</p>
+            </div>
+          </article>
+        </div>
+
+        <form class="composer" id="questionForm">
+          <label class="sr-only" for="questionInput">Escribe tu pregunta</label>
+          <textarea id="questionInput" rows="1" maxlength="800" placeholder="Ejemplo: ¿Qué apoyo existe si tengo dificultades en matemática?" required></textarea>
+          <button type="submit" id="sendButton" aria-label="Enviar pregunta">
+            <span>Enviar</span><span class="arrow">↗</span>
+          </button>
+        </form>
+        <p class="disclaimer">Las respuestas se generan desde el documento cargado. Verifica las fuentes antes de tomar una decisión.</p>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
