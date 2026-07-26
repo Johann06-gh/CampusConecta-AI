@@ -6,7 +6,7 @@ Cualquier colaborador/estudiante puede escribirle una pregunta en lenguaje natur
 
 Si el agente no encuentra información suficiente, lo indica explícitamente en lugar de inventar una respuesta.
 
-Arquitectura
+## Arquitectura
 
 ```
 Pregunta del usuario (frontend)
@@ -37,10 +37,10 @@ Pregunta del usuario (frontend)
 
 Flujo de datos: CSV → `DocumentLoader` (chunking + metadatos) → `HybridRetriever` (indexación TF-IDF) → `CampusAgent` (recuperación + generación) → API REST → interfaz web.
 
-Tecnologías utilizadas:
+## Tecnologías utilizadas
 
-Componente | Tecnología 
-
+| Componente | Tecnología |
+|---|---|
 | Backend / API | Python 3.12, FastAPI, Uvicorn |
 | Recuperación de información | scikit-learn (TF-IDF + similitud coseno), coincidencia de palabras clave |
 | Lectura de documentos | `pypdf` (PDF), `csv` nativo (CSV) |
@@ -51,7 +51,7 @@ Componente | Tecnología
 | Contenedores | Docker |
 | Nube | Oracle Cloud Infrastructure (OCI) — Container Instances |
 
-Cómo ejecutar el proyecto localmente
+## Cómo ejecutar el proyecto localmente
 
 1. Clonar el repositorio
 ```bash
@@ -120,13 +120,15 @@ Respuesta del agente:
 >
 > Fuentes: [Préstamo de laptops — servicios_estudiantiles.csv]
 
-Despliegue en OCI
+## Despliegue en OCI
 
 El proyecto está preparado para desplegarse como **OCI Container Instance**. La guía completa paso a paso está en [`docs/DEPLOY_OCI.md`](docs/DEPLOY_OCI.md).
 
-Aplicación desplegada: http://161.153.194.42:8080/
+**Aplicación desplegada:** http://161.153.194.42:8080/
 
-Estructura del proyecto
+![Aplicación ejecutándose en OCI](docs/evidencias/oci-app.png)
+
+## Estructura del proyecto
 
 ```
 CampusConecta-AI/
