@@ -124,9 +124,7 @@ Despliegue en OCI
 
 El proyecto está preparado para desplegarse como **OCI Container Instance**. La guía completa paso a paso está en [`docs/DEPLOY_OCI.md`](docs/DEPLOY_OCI.md).
 
-Aplicación desplegada: `<pega aquí el enlace público de tu instancia de OCI>`
-
-![Aplicación ejecutándose en OCI](docs/evidencias/oci-app.png)
+Aplicación desplegada: http://161.153.194.42:8080/
 
 Estructura del proyecto
 
